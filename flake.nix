@@ -28,15 +28,6 @@
         # Generate a user-friendly version number.
         version = "${builtins.substring 0 8 lastModifiedDate}-${self.shortRev or "dirty"}";
 
-        # # System types to support.
-        # supportedSystems = [ "x86_64-linux" ];
-        #
-        # # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
-        # forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
-        #
-        # # Nixpkgs instantiated for supported system types.
-        # nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; overlays = [ self.overlay ]; });
-        #
         # A Nixpkgs overlay.
         overlay = final: prev: {
           rust-web-server = with final;
@@ -53,6 +44,7 @@
 
                 buildInputs =
                   [
+                    libiconv
                     rustc
                     cargo
                   ]
