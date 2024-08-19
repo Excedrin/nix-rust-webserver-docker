@@ -1,11 +1,16 @@
 Trivial example of one way to use [nix2container](https://github.com/nlewo/nix2container) to build a Docker image.
 
 ```
-nix run -v 'github:Excedrin/nix-rust-webserver-docker/placeholder#default.copyToDockerDaemon'
+nix run -v 'github:Excedrin/nix-rust-webserver-docker/21f2753dde6e2a9d03f9d36bc1fb5d92e5be39eb#default.copyToDockerDaemon'
 
-docker run --name rust-web-server --rm -d -p 8080:8080 rust-web-server:20240819-placeholder
+docker run --name rust-web-server --rm -d -p 8080:8080 rust-web-server:20240819-21f2753
 
 curl http://127.0.0.1:8080/
 
 docker kill rust-web-server
+```
+
+This build is deterministic, so that particular revision will have exactly this hash:
+```
+docker inspect db3db050fa9abe134041d05127c2b68a7c255543040f15461be7662d0d275b11
 ```
