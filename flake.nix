@@ -3,8 +3,8 @@
 
   inputs = {
     # Nixpkgs / NixOS version to use.
-    #nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/ad0b5eed1b6031efaed382844806550c3dcb4206";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/ad0b5eed1b6031efaed382844806550c3dcb4206";
     import-cargo.url = "github:edolstra/import-cargo";
     nix2container.url = "github:nlewo/nix2container";
     flake-utils.url = "github:numtide/flake-utils";
